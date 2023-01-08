@@ -1,27 +1,62 @@
+
 try {
   (() => {
-    var e = __$$hmAppManager$$__.currentApp;
-    try {
-      __$$hmAppManager$$__.currentApp.app = DeviceRuntimeCore.App({
-        globalData: {},
-        onCreate(e) {},
-        onShow(e) {},
-        onHide(e) {},
-        onDestory(e) {},
-        onError(e) {},
-        onPageNotFound(e) {},
-        onUnhandledRejection(e) {}
-      });
-    } catch (e) {
-      console.log(e);
-    }
-    e.app.__globals__ = {
-      lang: new DeviceRuntimeCore.HmUtils.Lang(
-        DeviceRuntimeCore.HmUtils.getLanguage()
-      ),
-      px: DeviceRuntimeCore.HmUtils.getPx(192)
-    };
-  })();
+  
+var __$$app$$__ = __$$hmAppManager$$__.currentApp;
+
+function noTreeShaking() {}
+
+function getApp() {
+  return __$$app$$__.app;
+}
+
+function getCurrentPage() {
+  return __$$app$$__.current && __$$app$$__.current.module;
+}
+
+  /*
+* ZeppOS bundle tool v2.4.0
+* Copyright © Zepp. All Rights Reserved
+*/
+'use strict';
+
+const languageTable = {};
+
+getApp() ? DeviceRuntimeCore.HmUtils.gettextFactory(languageTable, getApp().__globals__.lang, 'en-US') : console.log(languageTable);
+
+try {
+    (() => {
+        var e = __$$hmAppManager$$__.currentApp;
+        const o = DeviceRuntimeCore.HmLogger.getLogger('hello-world-app');
+        e.app = DeviceRuntimeCore.App({
+            globalData: {},
+            onCreate() {
+                o.debug('app onCreate invoked');
+            },
+            onDestroy() {
+                o.debug('app onDestroy invoked');
+            }
+        }), e.app.__globals__ = {
+            lang: new DeviceRuntimeCore.HmUtils.Lang(DeviceRuntimeCore.HmUtils.getLanguage()),
+            px: DeviceRuntimeCore.HmUtils.getPx(490)
+        };
+    })();
 } catch (e) {
-  console.log(e);
+    console.log(e);
+}
+/*
+* end js
+*/
+
+  ;
+getApp().__globals__ = {
+  lang: new DeviceRuntimeCore.HmUtils.Lang(DeviceRuntimeCore.HmUtils.getLanguage()),
+  px: DeviceRuntimeCore.HmUtils.getPx(490)
+}
+getApp().__globals__.gettext = getApp() ? DeviceRuntimeCore.HmUtils.gettextFactory(languageTable, getApp().__globals__.lang, 'en-US') : console.log(languageTable)
+
+  })()
+} catch(e) {
+  console.log(e)
+  /* todo */
 }

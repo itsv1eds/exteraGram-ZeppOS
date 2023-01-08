@@ -31,6 +31,17 @@ t.module = DeviceRuntimeCore.Page({
         text_style: hmUI.text_style.WRAP,
         text: "extera.codes"
       })
+      hmUI.createWidget(hmUI.widget.IMG, {
+        x: 74,
+        y: 20,
+        src: "help.png"
+      })
+      .addEventListener(hmUI.event.CLICK_DOWN, function (b) {
+        hmApp.gotoPage({
+          url: "page/192x490_s_l66/index.page2",
+          param: "..."
+        })
+      });
     },
     onInit() {
       console.log("index page.js on init invoke"), this.init_view();
