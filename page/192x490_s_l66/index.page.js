@@ -19,11 +19,16 @@ DeviceRuntimeCore.HmLogger.getLogger("sanjiao");
 t.module = DeviceRuntimeCore.Page({
     init_view() {
       hmUI.setLayerScrolling(false);
+	  const qr = hmUI.createWidget(hmUI.widget.IMG, {
+		  x: 5,
+		  y: 120,
+		  src: "qr.png"
+	  })
       const Text = hmUI.createWidget(hmUI.widget.TEXT, {
         x: 0,
-        y: 0,
+        y: 300,
         w: 192,
-        h: 490,
+        h: 190,
         color: 0xffffff,
         text_size: 30,
         align_h: hmUI.align.CENTER_H,
