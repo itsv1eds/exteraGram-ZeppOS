@@ -21,7 +21,7 @@ t.module = DeviceRuntimeCore.Page({
       hmUI.setLayerScrolling(false);
 	  const qr = hmUI.createWidget(hmUI.widget.IMG, {
 		  x: 5,
-		  y: 120,
+		  y: 130,
 		  src: "qr.png"
 	  })
       const Text = hmUI.createWidget(hmUI.widget.TEXT, {
@@ -30,11 +30,11 @@ t.module = DeviceRuntimeCore.Page({
         w: 192,
         h: 190,
         color: 0xffffff,
-        text_size: 30,
+        text_size: 24,
         align_h: hmUI.align.CENTER_H,
         align_v: hmUI.align.CENTER_V,
         text_style: hmUI.text_style.WRAP,
-        text: "extera.codes"
+        text: "exteragram.app"
       })
       hmUI.createWidget(hmUI.widget.IMG, {
         x: 74,
